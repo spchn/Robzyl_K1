@@ -60,9 +60,6 @@ const t_menu_item MenuList[] =
     {"BusyCL",      MENU_BCL           }, // was "BCL"
     {"Compnd",      MENU_COMPAND       },
     {"Mode",        MENU_AM            }, // was "AM"
-#ifdef ENABLE_FEAT_F4HWN
-    {"TXLock",      MENU_TX_LOCK       }, 
-#endif
     {"ChList",      MENU_LIST_CH       },
     {"ChSave",      MENU_MEM_CH        }, // was "MEM-CH"
     {"ChDele",      MENU_DEL_CH        }, // was "DEL-CH"
@@ -1176,17 +1173,6 @@ void UI_DisplayMenu(void)
             #else
                 strcpy(String, gSubMenu_NA);
             #endif
-            break;
-
-        case MENU_TX_LOCK:
-            if(TX_freq_check(gEeprom.VfoInfo[gEeprom.TX_VFO].pTX->Frequency) == 0)
-            {
-                strcpy(String, "Inside\nF Lock\nPlan");
-            }
-            else
-            {
-                strcpy(String, gSubMenu_OFF_ON[gSubMenuSelection]);
-            }
             break;
 
         case MENU_SET_LCK:
