@@ -230,7 +230,24 @@ int32_t TX_freq_check(const uint32_t Frequency)
 
 #ifdef ENABLE_FEAT_F4HWN_PMR
         case F_LOCK_PMR:
-            if (Frequency >= 44600625 && Frequency <= 44619375)
+            if (
+                Frequency == 44600625 ||
+                Frequency == 44601875 ||
+                Frequency == 44603125 ||
+                Frequency == 44604375 ||
+                Frequency == 44605625 ||
+                Frequency == 44606875 ||
+                Frequency == 44608125 ||
+                Frequency == 44609375 ||
+                Frequency == 44610625 ||
+                Frequency == 44611875 ||
+                Frequency == 44613125 ||
+                Frequency == 44614375 ||
+                Frequency == 44615625 ||
+                Frequency == 44616875 ||
+                Frequency == 44618125 ||
+                Frequency == 44619375
+            )
                 return 0;
             break;
 #endif
